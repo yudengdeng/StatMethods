@@ -1,0 +1,332 @@
+---
+title: "Lab 2"
+author: "Lab 2 "
+date: '2022-09-08'
+output: word_document
+---
+
+
+
+R as a calculator 
+```{r}
+2+2 #add numbers 
+```
+
+
+```{r}
+2*pi # multiply by a constant 
+```
+
+
+```{r}
+ 7 + runif(1) # adding a uniform (0,1) random number 
+
+```
+
+```{r}
+ pnorm(1.96,0,1) # standard normal cdf
+```
+
+
+```{r}
+ 3^4 # powers
+```
+
+```{r}
+sqrt(4^2) # functions
+```
+
+```{r}
+log(exp(1))
+```
+
+```{r}
+ log(100, base = 10)
+```
+
+```{r}
+ rnorm(5) # generate 5 random numbers from N(0,1)
+```
+
+Assigning values to R objects 
+```{r}
+val = 3
+val
+```
+
+```{r}
+print(val)
+```
+
+
+```{r}
+# assign value to two objects
+a = b =3
+a
+```
+
+```{r}
+b
+```
+
+
+```{r}
+Val = 7 # case-sensitive!
+print(c(val, Val))
+```
+
+
+
+```{r}
+mySeq = 1:6
+mySeq
+```
+
+
+```{r}
+myOtherSeq = seq(1.1, 11.1, by = 2)
+myOtherSeq
+```
+
+
+```{r}
+length(myOtherSeq)
+```
+
+```{r}
+fours = rep(4, 6)
+fours
+```
+
+```{r}
+#This is a comment: here is an example of non-numeric data
+depts = c('espm', 'pmb', 'stats')
+depts
+```
+
+Vectors in R 
+```{r}
+# numeric vector
+nums = c(1.1, 3, -5.7)
+nums
+
+devs = rnorm(5)
+devs
+
+```
+
+
+```{r}
+# logical vector
+bools = c(TRUE, FALSE, TRUE)
+bools
+```
+
+Working with indices and subsets
+```{r}
+vals = seq(2, 12, by = 2)
+vals
+```
+
+
+```{r}
+vals[3]
+```
+
+
+```{r}
+vals[3:5]
+```
+
+```{r}
+ vals[c(1, 3, 6)]
+```
+
+```{r}
+vals[-c(1, 3, 6)]
+```
+
+```{r}
+ vals[c(rep(TRUE, 3), rep(FALSE, 2), TRUE)]
+```
+
+```{r}
+# list values >= 5
+vals[vals >= 5]
+```
+
+```{r}
+# list values >= 5
+vals[vals >= 5]
+```
+
+```{r}
+# list index whose value = 4
+which(vals == 4)
+```
+
+Vectorized calculations and comparisons
+```{r}
+vec1 = sample(1:5, 10, replace = TRUE)
+vec2 = sample(1:5, 10, replace = TRUE)
+vec1
+```
+
+```{r}
+ vec2
+```
+
+
+```{r}
+ vec1 + vec2
+```
+
+```{r}
+ vec1^vec2
+```
+
+```{r}
+ vec1 >= vec2
+```
+
+```{r}
+ vec1 <= 3
+```
+
+```{r}
+# using 'or'
+vec1 <= 0 | vec1 >= 3
+```
+
+
+```{r}
+# using 'and'
+vec1 <= 0 & vec1 >= vec2
+```
+
+
+```{r}
+vec1 == vec2
+```
+
+
+```{r}
+vec1 != vec2
+```
+
+
+```{r}
+# careful:
+vec1 = vec2
+identical(vec1, vec2)
+```
+
+An important related concept is that of recycling
+```{r}
+vec3 = sample(1:5, 5, replace = TRUE)
+vec4 = sample(1:5, 3, replace = TRUE)
+vec1
+```
+
+
+```{r}
+ vec3
+```
+
+```{r}
+ vec4
+```
+
+```{r}
+ vec1 + vec3
+```
+
+```{r}
+vec1 + vec4
+```
+
+
+```{r}
+set.seed(1) # set a random seed, so your random numbers won't be different when you generate them next time.
+hist(rnorm(1000))
+```
+
+
+
+
+Matrices
+```{r}
+mat = matrix(c(1,0,5,2,1,6,3,4,0),3,3)
+mat
+t(mat) %*% mat
+```
+
+
+```{r}
+ dim(mat)
+```
+
+```{r}
+# * is element-wise product
+t(mat) * mat
+```
+
+
+
+
+Some linear algera
+```{r}
+# vector without declaration of column/row vector
+z = c(1,2,3)
+# column vector 3 by 1
+x = matrix(c(1,2,3),3,1)
+x
+```
+
+
+```{r}
+# transpose
+t(x)
+```
+
+```{r}
+# row vector 1 by 3
+y = matrix(c(3,2,1),1,3)
+y
+```
+
+
+```{r}
+# sum
+c(y %*% rep(1,length(y)))
+```
+
+
+```{r}
+ sum(y)
+```
+
+```{r}
+# L-2 norm of a vector
+norm(x,"f")
+```
+
+
+```{r}
+# inner product
+t(x) %*% x
+```
+
+
+```{r}
+ z %*% z
+```
+
+
+```{r}
+# outer product
+x %*% t(x)
+```
+
+
+
