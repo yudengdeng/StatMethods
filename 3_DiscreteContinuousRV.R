@@ -12,7 +12,7 @@ rnorm(3, mean=10, sd=2)    # provide our own mean and standard deviation
 pnorm(72, mean=70, sd=3)
 
 
-$To find that 85th percentile of a normal distribution whose mean is 70 and whose standard deviation is 3.
+#To find that 85th percentile of a normal distribution whose mean is 70 and whose standard deviation is 3.
 qnorm(0.85,mean=70,sd=3)
 #To find the critical value for 98% Confidence level
 qnorm(0.99, mean=0, sd=1)
